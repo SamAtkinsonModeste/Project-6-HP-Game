@@ -1,1 +1,3 @@
-console.log('Hello World From Project 6');
+const qwerty = document.getElementById('qwerty');
+const phrase = document.getElementById('phrase');
+const btn_rest = document.getElementsByClassName('btn_reset');
