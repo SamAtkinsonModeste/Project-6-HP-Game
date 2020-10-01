@@ -40,10 +40,32 @@ const phrases = [
 
 //2. List of Functions to create
  //2A. Return a random pharse from the pharse array named: const getRandomPhraseArray
-  const getRandomPhraseArray = arr => { 
-      const randomArray= Math.floor(Math.random() * arr);
+  const getRandomPhraseArray = (arr) => { 
+    
+    let randomArrItem = arr[Math.floor(Math.random() * arr.length)];
+    return randomArrItem;
   };
- //2B. Add the letters to of a string to the display named: const addPhraseToDisplay
+
+  // console.log(getRandomPhraseArray(phrases));
+
+//2B. Add the letters to of a string to the display named: const addPhraseToDisplay
+ const addPhraseToDisplay = (letters) => {
+   letters = getRandomPhraseArray(phrases);
+    let hintsLetters = Object.values(letters);
+    let myHeader;
+    //  return hintsLetters; 
+    for (let i = 0; i< hintsLetters.length; i++) {
+         let hintText = hintsLetters[0];
+         let lettersLi = hintsLetters[1];
+         myHeader = `<h2> ${hintText} </h2>`;
+         
+    }
+    
+    letters = myHeader;
+    return letters;
+ };
+
+ console.log(addPhraseToDisplay());
  //2C. Check if a letter is in the phrase named: const checkletter
  //2D. Check if the game has been won or lost
 //2E. Attach an event listner to the START BUTTON which is startButton.addEventListener('click', () => {}); 
