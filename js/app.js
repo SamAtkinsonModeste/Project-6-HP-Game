@@ -57,12 +57,24 @@ const addPhraseToDisplay = (letters) => {
    for (let i = 0; i< hintsLetters.length; i++) {
      //This gets my hint text
         let hintText = hintsLetters[0];
-        let hintQ = document.createElement('h2');
-        hintQ.textContent = hintText;
-        console.log(hintQ);
+        let hintQuestion = document.createElement('h2');
+        hintQuestion.textContent = hintText;
+        console.log(hintQuestion);
       //This gets the pharse letters
         let pharseWords = hintsLetters[1];
         console.log(pharseWords);
+        for (let j =0; j< pharseWords.length; j++) {
+             const letter = pharseWords[j];
+             const spanLetter = document.createElement('span');
+             spanLetter.textContent = letter;
+             spanLetter.className = "letter";
+             if (spanLetter.textContent === '') {
+              spanLetter.className ="space";
+            }
+             console.log(spanLetter);
+
+        }
+
         
         
    }
