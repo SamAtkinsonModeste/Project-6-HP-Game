@@ -139,7 +139,11 @@ button {
 }
 
 .start {
-  background-color: var(--color-start);
+  /* background-color: var(--color-start); */
+  background-image: url("images/harry-friends.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .start a {
