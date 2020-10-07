@@ -66,6 +66,10 @@ h2 {
   
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
+  font-family: 'Harry P', cursive;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
   font-size: var(--font-size-large);
   
  
@@ -76,6 +80,10 @@ button {
   border: 1px solid transparent;
   padding: .5rem 1rem;
   color: var(--color-keys);
+  font-family: "Harry p", cursive;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
   font-size: var(--font-size-medium);
   background-color: var(--color-keys-light);
   border-radius: 5px;
@@ -164,6 +172,9 @@ span.letter {
   color: #fff;
   font-size: var(--font-size-large);
   font-family: 'Harry P', cursive;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
   background: #18154e;
 }
 
@@ -219,7 +230,7 @@ span.box:hover {
   left: 0;
   right: 0;
   border-radius: 5px;
-  display: none;
+  /* display: none; */
   
 }
 
