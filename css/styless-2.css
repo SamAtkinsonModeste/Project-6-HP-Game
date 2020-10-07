@@ -25,9 +25,9 @@
   --color-neutral-light: #D2D2D2;
   --color-keys: #37474F;
   --color-keys-light: #E5E5E5;
-  --font-size-large: 80px;
-  --font-size-medium: 40px;
-  --font-size-small: 20px;
+  --font-size-large: 5em;
+  --font-size-medium: 2.5em;
+  --font-size-small: 1.250em;
   --transition: all .2s ease-in-out;
 }
 
@@ -69,7 +69,6 @@ h2 {
   font-family: 'Harry P', cursive;
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
   font-size: var(--font-size-large);
   
  
@@ -83,7 +82,6 @@ button {
   font-family: "Harry p", cursive;
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
   font-size: var(--font-size-medium);
   background-color: var(--color-keys-light);
   border-radius: 5px;
@@ -153,7 +151,7 @@ span.letter {
   position: absolute;
   bottom: 0;
   text-align: center;
-  font-size: var(--font-size-small);
+  font-size: 4em;
   height: 70px;
   width: 70px;
   /* padding: 1px; */
@@ -170,11 +168,10 @@ span.letter {
 span.letter {
   transform: rotateX(-180deg);
   color: #fff;
-  font-size: var(--font-size-large);
+  padding-bottom: 1px;
   font-family: 'Harry P', cursive;
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
   background: #18154e;
 }
 
@@ -230,7 +227,7 @@ span.box:hover {
   left: 0;
   right: 0;
   border-radius: 5px;
-  /* display: none; */
+  display: none;
   
 }
 
