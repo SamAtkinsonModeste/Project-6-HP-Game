@@ -72,7 +72,7 @@ const pets = [
 
 
   //2B. Add the letters to of a string to the display named: const addPhraseToDisplay
-  const addPhraseToDisplay = (arr) => {
+  const addPhraseToDisplay = (letters) => {
     
       const li = document.createElement('li');
       //create elements to nest in li
@@ -84,24 +84,24 @@ const pets = [
 
     
 
-       for (let i = 0; i <arr.length; i++) {
-             let hintPharse = arr[i];
+      //  for (let i = 0; i <arr.length; i++) {
+      //        let hintPharse = arr[i];
              
-            banner.textContent = hintPharse.hint;
+      //       banner.textContent = hintPharse.hint;
           
-            li.textContent = hintPharse.pharse;
+      //       let hintPharse[pharse] =  
             
             
                         
-          //     let secondPropertyVals =  Object.values(arr[i])
-          // for (let j= 0; j< secondPropertyVals.length; j++) {
+      //     //     let secondPropertyVals =  Object.values(arr[i])
+      //     // for (let j= 0; j< secondPropertyVals.length; j++) {
                    
-          //         let liItem = secondPropertyVals[1][j];
-          //         li.textContent = liItem;
-          //      }
+      //     //         let liItem = secondPropertyVals[1][j];
+      //     //         li.textContent = liItem;
+      //     //      }
               
 
-       }
+      //  }
     
       const spanBox = document.createElement('span');
       spanBox.className = "box";
