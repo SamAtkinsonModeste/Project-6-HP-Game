@@ -10,32 +10,32 @@ let missed = 0;
 const phrases = [
 
   {
-    hint: "Which book is this?",
-    phrase: 'Harry Potter and the Chamber of Secrets'
+    hint: "Which book is this? Harry Potter and.....?",
+    phrase: 'the Chamber of Secrets'
   },
 
   {
-    hint: "Which character is this?",
+    hint: "Which young wizard is this?",
     phrase: 'Harry Potter',
   },
   {
-    hint: "Which book is this?",
-    phrase: 'Harry Potter and the Order of the Phoenix'
+    hint: "Which book is this? Harry Potter and .....?",
+    phrase: 'the Order of the Phoenix'
   },
   {
-    hint: "Which character is this?",
-    phrase: 'Professor Severus Snape'
+    hint: "Which Professor is this?",
+    phrase: 'Severus Snape'
   },
   {
-    hint: "Which book is this?",
-    phrase: 'Harry Potter and the Goblet of Fire'
+    hint: "Which book is this? Harry Potter and.....?",
+    phrase: 'the Goblet of Fire'
   },
   {
     hint: "Which character is this?",
     phrase: 'Hermione Granger'
   },
   {
-    hint: "Which character is this?",
+    hint: "Which wizard's father is this?",
     phrase: 'Lucius Malfoy'
   },
 ];
@@ -80,8 +80,7 @@ let randomPhraseObject = getRandomPhraseArray(phrases);
         li.appendChild(spanBox);
         spanLetter.textContent = characters[i];
         ul.appendChild(li);
-  
-        
+
       } else {
         const li = document.createElement('li');
         ul.appendChild(li); 
@@ -89,8 +88,6 @@ let randomPhraseObject = getRandomPhraseArray(phrases);
       }
   
     }
-  
-  
   
   };
   
