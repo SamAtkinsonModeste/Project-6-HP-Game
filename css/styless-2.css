@@ -47,6 +47,11 @@ body {
 li, ol, ul {
   padding: 0;
   display: inline-block;
+  /* margin: 60px 0 0; */
+}
+
+ol {
+  margin-bottom: 0;
 }
 
 /*Added my own rule for 3d transition*/
@@ -70,7 +75,7 @@ h2 {
   font-weight: normal;
   font-style: normal;
   font-size: var(--font-size-large);
-  
+  margin-top: 5px;
  
 }
 
@@ -97,12 +102,19 @@ button {
   height: 100%;
   max-height: 900px;
   text-align: center;
+  background-image: url(../images/harry-war.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 75%;
+
 }
 
 .section {
   width: 100%;
   padding: 10px;
 }
+
+
 
 /* Title */
 
