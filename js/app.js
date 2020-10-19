@@ -1,8 +1,9 @@
-const qwerty = document.getElementById('qwerty');
 const banner = document.querySelector('.header');
 const phrase = document.getElementById('phrase');
-const ul = document.querySelector('ul');
+const ul =  phrase.querySelector('ul');
+const qwerty = document.getElementById('qwerty');
 const startBtn = document.querySelector('a');
+const letterSpan = document.getElementsByClassName('letter');
 let missed = 0;
 
 
@@ -31,11 +32,11 @@ const phrases = [
     phrase: 'the Goblet of Fire'
   },
   {
-    hint: "Which character is this?",
+    hint: "Which young wizard is this?",
     phrase: 'Hermione Granger'
   },
   {
-    hint: "Which wizard's father is this?",
+    hint: "Which young wizard's father is this?",
     phrase: 'Lucius Malfoy'
   },
 ];
@@ -66,8 +67,12 @@ let randomPhraseObject = getRandomPhraseArray(phrases);
       element[property] = value;
       return element;
     }
+
+
+    
     const question = banner;
       banner.textContent = hint;
+      
     for (let i = 0; i < characters.length; i++) {
       
       if (characters[i] !== ' ') {
@@ -102,7 +107,7 @@ let randomPhraseObject = getRandomPhraseArray(phrases);
 
 
 
-
+//2E. Attach an event listner to the START BUTTON which is startButton.addEventListener('click', () => {}); 
 //Start Game Button Listener
 startBtn.addEventListener('click', (evt) => {
   
@@ -119,6 +124,44 @@ startBtn.addEventListener('click', (evt) => {
 
 
  //2C. Check if a letter is in the phrase named: const checkletter
- //2D. Check if the game has been won or lost
-//2E. Attach an event listner to the START BUTTON which is startButton.addEventListener('click', () => {}); 
+ const checkLetter = button => {
+   
+    let spanShow = document.querySelectorAll('.box');
+    let match = null;
+
+
+    for (let i = 0; i <letterSpan.length; i++) {
+        spanShow = letterSpan[i].parentNode;
+        // console.log(spanShow);
+        let letter = letterSpan[i].textContent;
+       
+        if (button === letter.toLowerCase()){
+            //  match = console.log(letter);
+            letter = spanShow.classList.add('show');
+            match = true;
+        }
+        
+    }  
+    
+    return match;
+
+ };
+
+// checkletter();
+ 
+
 //2F. Listen for the onscreen keyboard to be clicked qwerty.addEventListener('click', () => {});
+qwerty.addEventListener('click', (evt) => {
+   let letterFound;
+   
+  if (evt.target.tagName === 'BUTTON') {
+    const btn = evt.target;
+    btn.className = "chosen";
+    btn.disabled = true;
+    const check = checkLetter(evt.target.textContent.toLowerCase());
+    letterFound = check;
+  }
+
+});
+
+//2D. Check if the game has been won or lost
