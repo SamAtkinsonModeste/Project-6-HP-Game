@@ -12,16 +12,16 @@ const phrases = [
 
   {
     hint: "Which book is this? Harry Potter and.....?",
-    phrase: 'the Chamber of Secrets'
+    phrase: 'The Chamber of Secrets'
   },
 
   {
-    hint: "Which young wizard is this?",
+    hint: "Which young male wizard is this?",
     phrase: 'Harry Potter',
   },
   {
     hint: "Which book is this? Harry Potter and .....?",
-    phrase: 'the Order of the Phoenix'
+    phrase: 'The Order of the Phoenix'
   },
   {
     hint: "Which Professor is this?",
@@ -29,10 +29,10 @@ const phrases = [
   },
   {
     hint: "Which book is this? Harry Potter and.....?",
-    phrase: 'the Goblet of Fire'
+    phrase: 'The Goblet of Fire'
   },
   {
-    hint: "Which young wizard is this?",
+    hint: "Which young female wizard is this?",
     phrase: 'Hermione Granger'
   },
   {
