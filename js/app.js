@@ -4,7 +4,9 @@ const ul =  phrase.querySelector('ul');
 const qwerty = document.getElementById('qwerty');
 const startBtn = document.querySelector('a');
 const letterSpan = document.getElementsByClassName('letter');
+const scoreboard = document.getElementById('scoreboard');
 let missed = 0;
+
 
 
 //1.Create an array of pharses
@@ -123,20 +125,20 @@ startBtn.addEventListener('click', (evt) => {
 
 
 
- //2C. Check if a letter is in the phrase named: const checkletter
+ //2C. Check if a letter is in the phrase named: const checkLetter
  const checkLetter = button => {
    
+  //Reference to my span container of my letter
     let spanShow = document.querySelectorAll('.box');
     let match = null;
 
 
     for (let i = 0; i <letterSpan.length; i++) {
         spanShow = letterSpan[i].parentNode;
-        // console.log(spanShow);
         let letter = letterSpan[i].textContent;
        
-        if (button === letter.toLowerCase()){
-            //  match = console.log(letter);
+        if (button === letter.toLowerCase()) {
+
             letter = spanShow.classList.add('show');
             match = true;
         }
@@ -147,20 +149,71 @@ startBtn.addEventListener('click', (evt) => {
 
  };
 
-// checkletter();
- 
+
 
 //2F. Listen for the onscreen keyboard to be clicked qwerty.addEventListener('click', () => {});
 qwerty.addEventListener('click', (evt) => {
-   let letterFound;
+  //  let letterFound;
    
   if (evt.target.tagName === 'BUTTON') {
     const btn = evt.target;
     btn.className = "chosen";
     btn.disabled = true;
     const check = checkLetter(evt.target.textContent.toLowerCase());
-    letterFound = check;
+    // letterFound = check;
+ 
+
+  if(!check) {
+    
+    // function swapImgs(element, propClass, propSrc, value) {
+       
+
+    // }
+      let wand = document.querySelectorAll('.tries img');
+      console.log(wand);
+      // let wandBroken = document.querySelectorAll('.tries img');
+     
+      let oopsWand = wand[0];
+      console.log(oopsWand);
+      // wandBroken.src = "images/broken-wand.png";
+
+      oopsWand.src = "images/broken-wand.png";
+     
+      console.log(oppsWand[0]);
+      oopsWand.className = "oops";
+      console.log(oppsWand[0]);
+      if ( missed === missed + 1) {
+       missed = oopsWand[0];
+    
+     
+
+     console.log(missed);
+
+      }
+      // 
+      
+
+     
+}
+
+
+    //   if (letterFound === null) {  
+    //     let liveHeart = document.querySelectorAll('.tries');
+    //     let lostHeart = document.querySelectorAll('.tries img');
+    //     lostHeart[0].src = 'images/lostHeart.png';
+    //     liveHeart[0].className = '';
+    //     missed += 1;
+    // } 
+
+      
+  
+    
+      
+    
+    // } 
+
   }
+  
 
 });
 
