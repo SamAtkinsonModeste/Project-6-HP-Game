@@ -173,14 +173,14 @@ qwerty.addEventListener('click', (evt) => {
       console.log(wand);
       // let wandBroken = document.querySelectorAll('.tries img');
      
-      let oopsWand = wand[0];
+      let oopsWand = wand[0][0];
       console.log(oopsWand);
       // wandBroken.src = "images/broken-wand.png";
 
-      oopsWand.src = "images/broken-wand.png";
+      oopsWand[0][0].src = "images/broken-wand.png";
      
-      console.log(oppsWand[0]);
-      oopsWand.className = "oops";
+      console.log(oppsWand);
+      oopsWand[0].className = "oops";
       console.log(oppsWand[0]);
       if ( missed === missed + 1) {
        missed = oopsWand[0];
@@ -197,13 +197,7 @@ qwerty.addEventListener('click', (evt) => {
 }
 
 
-    //   if (letterFound === null) {  
-    //     let liveHeart = document.querySelectorAll('.tries');
-    //     let lostHeart = document.querySelectorAll('.tries img');
-    //     lostHeart[0].src = 'images/lostHeart.png';
-    //     liveHeart[0].className = '';
-    //     missed += 1;
-    // } 
+    
 
       
   
