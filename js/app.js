@@ -169,25 +169,25 @@ qwerty.addEventListener('click', (evt) => {
        
 
     // }
-      let wand = document.querySelectorAll('.tries img');
+      let wand = document.querySelectorAll('.tries');
       console.log(wand);
-      // let wandBroken = document.querySelectorAll('.tries img');
+      let oopsWand = document.querySelectorAll('.tries img');
      
-      let oopsWand = wand[0][0];
-      console.log(oopsWand);
-      // wandBroken.src = "images/broken-wand.png";
+      
+     
+       wand[0].className = "";
 
-      oopsWand[0][0].src = "images/broken-wand.png";
+      oopsWand[0].src = "images/broken-wand.png";
      
-      console.log(oppsWand);
-      oopsWand[0].className = "oops";
-      console.log(oppsWand[0]);
+      // console.log(oppsWand);
+      
+      
       if ( missed === missed + 1) {
-       missed = oopsWand[0];
+       missed = oopsWand;
     
      
 
-     console.log(missed);
+    //  console.log(missed);
 
       }
       // 
@@ -197,8 +197,7 @@ qwerty.addEventListener('click', (evt) => {
 }
 
 
-    
-
+   
       
   
     
