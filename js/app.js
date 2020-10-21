@@ -169,45 +169,85 @@ qwerty.addEventListener('click', (evt) => {
        
 
     // }
-      let wand = document.querySelectorAll('.tries');
-      console.log(wand);
-      let oopsWand = document.querySelectorAll('.tries img');
+      // let wand = document.querySelectorAll('.tries');
+      // console.log(wand.length);
+     
+      // let oopsWand = document.querySelectorAll('.tries img');
      
       
      
-       wand[0].className = "";
+      //  wand[0].className = "";
 
-      oopsWand[0].src = "images/broken-wand.png";
+      // oopsWand[0].src = "images/broken-wand.png";
      
-      // console.log(oppsWand);
+      // // console.log(oppsWand);
       
       
-      if ( missed === missed + 1) {
-       missed = oopsWand;
+      // if ( missed === missed + 1) {
+      //  missed = oopsWand;
+      //  console.log(missed);
     
-     
+       let oopsWand = document.querySelectorAll('.tries img');
+       console.log(oopsWand);
+       
+       console.log(missed);
+       missed++;
+       oopsWand[missed - 1].src = "images/broken-wand.png";
+       console.log(oopsWand[missed - 1].src.indexOf('img'));
 
-    //  console.log(missed);
+    
 
       }
-      // 
       
-
-     
-}
-
-
-   
-      
-  
-    
-      
-    
-    // } 
 
   }
   
+  checkWin();
 
 });
 
-//2D. Check if the game has been won or lost
+
+
+//2D. Check if the game has been won or lost with function checkWin = () => {}
+const checkWin = () => {
+ 
+  const spanLetter = ul.getElementsByClassName('letter');
+  const spanBox    = ul.getElementsByClassName('show');
+  // console.log(spanLetter.length);
+  // console.log(spanBox.length);
+
+  if (spanBox.length === spanLetter.length) {
+    
+
+      let overlayWin = document.getElementById('overlay');
+      overlayWin.className = "win";
+      let winText = document.querySelector('.title');
+      winText.className = "winLose";
+      winText.textContent = "You helped Harry WIN!!! Well Done :)";
+      overlayWin.style.display = "flex";
+      startBtn.className = "btn__restRound";
+      startBtn.textContent = "Try Again?";
+      overlayWin.appendChild(startBtn);
+
+
+
+  } 
+  
+  
+    if (missed >= 5) {
+
+    let overlayLose = document.getElementById('overlay');
+    overlayLose.className = "lose";
+    let loseText = document.querySelector('.title');
+    loseText.className = "winLose";
+    loseText.textContent = "OH No!! Harry lost to Voldermort :(";
+    overlayLose.style.display = "flex";
+    startBtn.className = "btn__restRound";
+    startBtn.textContent = "Try Again?";
+    overlayLose.appendChild(startBtn);
+    
+
+  }
+
+
+}
