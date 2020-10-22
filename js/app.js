@@ -165,28 +165,7 @@ qwerty.addEventListener('click', (evt) => {
 
   if(!check) {
     
-    // function swapImgs(element, propClass, propSrc, value) {
        
-
-    // }
-      // let wand = document.querySelectorAll('.tries');
-      // console.log(wand.length);
-     
-      // let oopsWand = document.querySelectorAll('.tries img');
-     
-      
-     
-      //  wand[0].className = "";
-
-      // oopsWand[0].src = "images/broken-wand.png";
-     
-      // // console.log(oppsWand);
-      
-      
-      // if ( missed === missed + 1) {
-      //  missed = oopsWand;
-      //  console.log(missed);
-    
        let oopsWand = document.querySelectorAll('.tries img');
        console.log(oopsWand);
        
@@ -225,8 +204,8 @@ const checkWin = () => {
       winText.className = "winLose";
       winText.textContent = "You helped Harry WIN!!! Well Done :)";
       overlayWin.style.display = "flex";
-      startBtn.className = "btn__restRound";
-      startBtn.textContent = "Try Again?";
+      startBtn.className = "btn__resetRound";
+      startBtn.textContent = "Go Again?";
       overlayWin.appendChild(startBtn);
 
 
@@ -239,15 +218,57 @@ const checkWin = () => {
     let overlayLose = document.getElementById('overlay');
     overlayLose.className = "lose";
     let loseText = document.querySelector('.title');
-    loseText.className = "winLose";
+    loseText.className = "loseWin";
     loseText.textContent = "OH No!! Harry lost to Voldermort :(";
     overlayLose.style.display = "flex";
-    startBtn.className = "btn__restRound";
-    startBtn.textContent = "Try Again?";
+    startBtn.className = "btn__resetRound";
+    startBtn.textContent = "Try Another?";
     overlayLose.appendChild(startBtn);
     
 
   }
+
+  const gameReset = (()=> {
+    
+    missed = 0;
+    
+    let wands = document.querySelectorAll('.tries img');
+      wands.forEach(img => {
+        img.src = "images/wands.png";
+
+      });
+   
+      let btns = document.querySelectorAll('.keyrow button');
+         btns.forEach(btn => {
+           btn.className = "";
+           btn.disabled = false;
+         });
+    
+        
+        ul.innerHTML = "";
+
+         
+         
+         
+      
+
+  });
+
+  
+  startBtn.addEventListener('click', (evt) => {
+  
+    gameReset();
+    const addNewPhrase = getRandomPhraseArray(phrases);
+    addPhraseToDisplay(addNewPhrase);
+
+         
+
+   
+
+    
+      
+  
+  });
 
 
 }
