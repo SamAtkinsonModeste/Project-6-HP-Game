@@ -74,7 +74,8 @@ span {
 
 h2,
 .title,
-.winLose {
+.winLose,
+.loseWin {
   
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
@@ -86,7 +87,8 @@ h2,
  
 }
 
-.winLose {
+.winLose,
+.loseWin {
   margin-bottom: 300px;
 }
 
@@ -133,7 +135,6 @@ margin-top: 100px;
 
 #scoreboard {
   margin-bottom: 10px;
-  /* background:linear-gradient(#0F2027, #000); */
 }
 /* Title */
 
@@ -169,17 +170,7 @@ span.box {
 }
 
 
-/* .letter {
-  font-size: var(--font-size-medium);
-  height: 65px;
-  width: 65px;
-  padding: 20px 1px 0 1px;
-  margin-right: 2px;
-  color: transparent;
-  border: solid 3px blue;
-  background: red;
-  border-radius: 5px;
-} */
+
 
 span.front,
 span.letter {
@@ -210,9 +201,9 @@ span.letter {
   background: #18154e;
 }
 
-span.box:hover {
+/* span.box:hover {
   transform: rotate3d(1, 0, 0, 180deg);
-}
+} */
 
 
 
@@ -240,7 +231,7 @@ span.box:hover {
 
 
 .btn__reset,
-.btn__restRound {
+.btn__resetRound {
   padding: 23px 31px;
   margin: 5px auto;
   background: #002528;
@@ -252,8 +243,9 @@ span.box:hover {
 }
 
 
-.btn__restRound {
-margin: 150px auto 0;
+.btn__resetRound {
+margin: 120px auto 0;
+cursor: pointer;
 
 }
 
@@ -272,12 +264,15 @@ margin: 150px auto 0;
   left: 0;
   right: 0;
   border-radius: 5px;
+ 
   
 }
 
 
 
-.title {
+.title,
+.winLose,
+.loseWin {
   /* color: #fff; */
   margin-top:300px;
   color:#fff;
@@ -298,6 +293,13 @@ margin: 150px auto 0;
   letter-spacing: 4px;
 }
 
+.winLose,
+.loseWin {
+  margin-top: 10px;
+}
+
+
+
 .start {
   background: var(--color-start); 
   background-image:  url("../images/harry-potter-start.jpg"); 
@@ -308,31 +310,16 @@ margin: 150px auto 0;
 }
 
 .start a {
-   /* color: var(--color-win);
-  color: #fff; 
-  text-shadow:   0 5px 10px #060135;
-  padding: 23px 31px;
-  margin: 5px auto;
-  background: #002528;
-  box-shadow:inset 0 0 7px 3px #e1eef4;
-  border-radius: 41px;
-  border: solid#010806 4px;
-  font-size: var(--font-size-medium);
-  font-family: 'Harry P', cursive;
-   */
    cursor: pointer;
 }
 
 
-/*wands*/
 
-/* .tries {
-  border: solid green 1px;
-  width: 95px;
-} */
 
 .win {
   background-color: var(--color-win);
+  
+  
 }
 
 .win a {
@@ -341,7 +328,9 @@ margin: 150px auto 0;
 
 .lose {
   background-color: var(--color-lose);
+ 
 }
+
 
 .lose a {
   color: var(--color-lose);
