@@ -200,10 +200,11 @@ const checkWin = () => {
 
       let overlayWin = document.getElementById('overlay');
       overlayWin.className = "win";
-      let winText = document.querySelector('.title');
-      winText.className = "winLose";
-      winText.textContent = "You helped Harry WIN!!! Well Done :)";
       overlayWin.style.display = "flex";
+      let winText = overlayWin.querySelector('.title');
+      console.log(winText);
+      winText.textContent = "You helped Harry WIN!!! Well Done :)";
+      winText.className = "winLose";
       startBtn.className = "btn__resetRound";
       startBtn.textContent = "Go Again?";
       overlayWin.appendChild(startBtn);
@@ -217,10 +218,10 @@ const checkWin = () => {
 
     let overlayLose = document.getElementById('overlay');
     overlayLose.className = "lose";
-    let loseText = document.querySelector('.title');
-    loseText.className = "loseWin";
-    loseText.textContent = "OH No!! Harry lost to Voldermort :(";
     overlayLose.style.display = "flex";
+    let loseText = overlayLose.querySelector('.title');
+    loseText.textContent = "OH No!! Harry lost to Voldermort :(";
+    loseText.className = "loseWin";
     startBtn.className = "btn__resetRound";
     startBtn.textContent = "Try Another?";
     overlayLose.appendChild(startBtn);
@@ -247,7 +248,31 @@ const checkWin = () => {
         
         ul.innerHTML = "";
 
+        
+        
+        let resetLoseText = document.querySelectorAll('h2')[0];
+        resetLoseText.className = "title";
+        resetLoseText.textContent = "";
+
+        // let resetWinText = document.querySelector('.winLose');
+        // resetWinText.className = "title";
+        // resetWinText.textContent = "";
+        
+     
+        
+        
+
+        //  if ( overlayLose.style.display === "flex") {
+
+        //       overlayLose.style.display = "none;"
+        //  } else if ( overlayWin.style.display === "flex") {
+        //     overlayWin.style.display = "none;"
          
+        //   } else {
+            
+        //        let overlay =  document.getElementById('overlay');
+        //        overlay.className = "start";
+        //   }
          
          
       
@@ -258,6 +283,11 @@ const checkWin = () => {
   startBtn.addEventListener('click', (evt) => {
   
     gameReset();
+    
+    const overlay = document.getElementById('overlay');
+    overlay.className = "start";
+    overlay.style.display = "none";
+    
     const addNewPhrase = getRandomPhraseArray(phrases);
     addPhraseToDisplay(addNewPhrase);
 
