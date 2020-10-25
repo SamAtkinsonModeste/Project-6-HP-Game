@@ -19,7 +19,7 @@
 
 :root {
   --color-win:  rgb(250, 225, 2);
-  --color-lose: #D94545;
+  --color-lose: #f70505;
   --color-start: #5b85b7;
   --color-neutral:#5583b9;;
   --color-neutral-light: #D2D2D2;
@@ -322,20 +322,22 @@ cursor: pointer;
   
 }
 
-.win ul {
-  margin: 394px 0 0;
-}
+
 
 .win a {
   color: var(--color-win);
+  text-shadow: 0 1px 1px #fff;
 }
 
 .lose {
   background-color: var(--color-lose);
+  background: url(../images/voldermort-team.jpg) no-repeat;
+  background-size: cover;
  
 }
 
 
 .lose a {
   color: var(--color-lose);
+  text-shadow: 0 1px 1px #fff;
 }
