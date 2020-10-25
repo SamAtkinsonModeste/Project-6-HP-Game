@@ -242,7 +242,7 @@ span.letter {
 
 
 .btn__resetRound {
-margin: 120px auto 0;
+margin: 314px auto 0;
 cursor: pointer;
 
 }
@@ -316,8 +316,14 @@ cursor: pointer;
 
 .win {
   background-color: var(--color-keys);
+  background: url(../images/team.jpg) no-repeat;
+  background-size: cover;
   
   
+}
+
+.win ul {
+  margin: 394px 0 0;
 }
 
 .win a {
