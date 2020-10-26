@@ -41,6 +41,26 @@ const phrases = [
     hint: "Which young wizard's father is this?",
     phrase: 'Lucius Malfoy'
   },
+
+  {
+    hint: "Which young male wizard is this?",
+    phrase: 'Ron Weasley'
+  },
+
+  {
+    hint: "Which Professor is this?",
+    phrase: 'Minerva McGonagall'
+  },
+
+  {
+    hint: "Which young female wizard is this?",
+    phrase: 'Luna Lovegood'
+  },
+
+  {
+    hint: "Which male wizard is this?",
+    phrase: 'Lord Voldemolt'
+  },
 ];
 
 
@@ -206,7 +226,7 @@ let randomPhraseObject = getRandomPhraseArray(phrases);
 
           overlayWin.className = "win";
           overlayWin.style.display = "flex";
-          let winText = overlayWin.querySelector('.title');
+          let winText = overlayWin.querySelector('h2');
           winText.className = "winLose";
           winText.textContent = " Well Done :)   Harry's Team WINS!!!";
           startBtn.className = "btn__resetRound";
@@ -223,9 +243,9 @@ let randomPhraseObject = getRandomPhraseArray(phrases);
         let overlayLose = document.getElementById('overlay');
         overlayLose.className = "lose";
         overlayLose.style.display = "flex";
-        let loseText = overlayLose.querySelector('.title');
+        let loseText = overlayLose.querySelector('h2');
         loseText.className = "loseWin";
-        loseText.textContent = "Harry's Team lost to Voldermort's Team!! :(";
+        loseText.textContent = "Harry's Team lost to Voldemort's Team!! :(";
         startBtn.className = "btn__resetRound";
         startBtn.textContent = "Try Another?";
         overlayLose.appendChild(startBtn);
