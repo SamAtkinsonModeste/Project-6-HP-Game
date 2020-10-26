@@ -59,11 +59,12 @@ let randomPhraseObject = getRandomPhraseArray(phrases);
 
   //2B. Add the letters to of a string to the display named: const addPhraseToDisplay
   const addPhraseToDisplay = (arr) => {
+    //Gets the hint question in my array of objects
     let hint = arr.hint;
     let characters = arr.phrase.split('');
   
     
-    //create elements to nest in li
+    //create elements to nest in li function
     function createElement(nameElement, property, value) {
       const element = document.createElement(nameElement);
       element[property] = value;
@@ -71,7 +72,7 @@ let randomPhraseObject = getRandomPhraseArray(phrases);
     }
 
 
-    
+    //sets the H2 text content of div class main
     const question = banner;
       banner.textContent = hint;
       
@@ -125,7 +126,7 @@ startBtn.addEventListener('click', (evt) => {
 
 
 
- //2C. Check if a letter is in the phrase named: const checkLetter
+ //2C. Check if a letter is in the phrase name function: const checkLetter
  const checkLetter = button => {
    
   //Reference to my span container of my letter
@@ -160,7 +161,7 @@ qwerty.addEventListener('click', (evt) => {
     btn.className = "chosen";
     btn.disabled = true;
     const check = checkLetter(evt.target.textContent.toLowerCase());
-    // letterFound = check;
+    
  
 
   if(!check) {
@@ -180,8 +181,14 @@ qwerty.addEventListener('click', (evt) => {
       
 
   }
+
+ setTimeout( () => {
   
   checkWin();
+
+ } ,3000);
+  
+
 
 });
 
@@ -192,23 +199,22 @@ const checkWin = () => {
  
   const spanLetter = ul.getElementsByClassName('letter');
   const spanBox    = ul.getElementsByClassName('show');
-  // console.log(spanLetter.length);
-  // console.log(spanBox.length);
+  
 
   if (spanBox.length === spanLetter.length) {
     
 
       let overlayWin = document.getElementById('overlay');
+
       overlayWin.className = "win";
       overlayWin.style.display = "flex";
       let winText = overlayWin.querySelector('.title');
-      console.log(winText);
-      winText.textContent = "You helped Harry WIN!!! Well Done :)";
-      winText.className = "winLose";
+       winText.className = "winLose";
+      winText.textContent = " Well Done :)   Harry's Team WINS!!!";
       startBtn.className = "btn__resetRound";
       startBtn.textContent = "Go Again?";
       overlayWin.appendChild(startBtn);
-
+     
 
 
   } 
@@ -220,25 +226,29 @@ const checkWin = () => {
     overlayLose.className = "lose";
     overlayLose.style.display = "flex";
     let loseText = overlayLose.querySelector('.title');
-    loseText.textContent = "OH No!! Harry lost to Voldermort :(";
     loseText.className = "loseWin";
+    loseText.textContent = "Harry's Team lost to Voldermort's Team!! :(";
     startBtn.className = "btn__resetRound";
     startBtn.textContent = "Try Another?";
     overlayLose.appendChild(startBtn);
-    
+   
 
   }
 
+ 
+//Reset Game Function
   const gameReset = (()=> {
     
     missed = 0;
     
+    //Reset my wands to whole wands
     let wands = document.querySelectorAll('.tries img');
       wands.forEach(img => {
         img.src = "images/wands.png";
 
       });
    
+      // Reset the KeyBoard Buttons 
       let btns = document.querySelectorAll('.keyrow button');
          btns.forEach(btn => {
            btn.className = "";
@@ -252,31 +262,7 @@ const checkWin = () => {
         
         let resetLoseText = document.querySelectorAll('h2')[0];
         resetLoseText.className = "title";
-        resetLoseText.textContent = "";
-
-        // let resetWinText = document.querySelector('.winLose');
-        // resetWinText.className = "title";
-        // resetWinText.textContent = "";
-        
-     
-        
-        
-
-        //  if ( overlayLose.style.display === "flex") {
-
-        //       overlayLose.style.display = "none;"
-        //  } else if ( overlayWin.style.display === "flex") {
-        //     overlayWin.style.display = "none;"
-         
-        //   } else {
-            
-        //        let overlay =  document.getElementById('overlay');
-        //        overlay.className = "start";
-        //   }
-         
-         
-      
-
+        resetLoseText.textContent = "";        
   });
 
   
