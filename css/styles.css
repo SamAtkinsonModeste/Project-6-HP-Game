@@ -1,18 +1,33 @@
 /* Main styles */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
 
+@font-face {
+  font-family: 'Harry P';
+  src: url('../harry_p-webFont/HarryP.eot');
+  src: url('../harry_p-webFont/HarryP.eot?#iefix') format('embedded-opentype'),
+      url('../harry_p-webFont/HarryP.woff2') format('woff2'),
+      url('../harry_p-webFont/HarryP.woff') format('woff'),
+      url('../harry_p-webFont/HarryP.ttf') format('truetype'),
+      url('../harry_p-webFont/HarryP.svg#HarryP') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 /* Variables */
 
 :root {
-  --color-win: #78CF82;
-  --color-lose: #D94545;
+  --color-win:  rgb(250, 225, 2);
+  --color-lose: #f70505;
   --color-start: #5b85b7;
-  --color-neutral: #445069;
+  --color-neutral:#5583b9;;
   --color-neutral-light: #D2D2D2;
   --color-keys: #37474F;
   --color-keys-light: #E5E5E5;
-  --font-size-large: 60px;
-  --font-size-medium: 20px;
+  --font-size-large: 4em;
+  --font-size-medium: 2.5em;
+  --font-size-small: 1.250em;
   --transition: all .2s ease-in-out;
 }
 
@@ -27,19 +42,54 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+  background: linear-gradient( #000, #203A43,#000, #000),
+  url(../images/harry-war.jpg) no-repeat center top;
+  background-size: 90%, 100%;
+  /* background: */
 }
 
 li, ol, ul {
   padding: 0;
   display: inline-block;
+   margin: 60px 0 0; 
 }
 
-h2 {
+ol {
   margin: 0;
+  padding-bottom: 30px;
+}
+
+/*Added my own rule for 3d transition*/
+ul li {
+  height: 60px;
+  width: 60px;
+  perspective: 1000px;
+  perspective-origin: 50% 100%;
+  margin-right: 5px;
+}
+
+span {
+  display: block;
+}
+
+.header,
+.title,
+.winLose,
+.loseWin {
+  
   text-transform: uppercase;
   font-family: 'Open Sans', sans-serif;
+  font-family: 'Harry P', cursive;
+  font-weight: normal;
+  font-style: normal;
   font-size: var(--font-size-large);
-  margin: 0;
+  margin-top: 15px;
+ 
+}
+
+.winLose,
+.loseWin {
+  margin-bottom: 300px;
 }
 
 button {
@@ -47,9 +97,13 @@ button {
   border: 1px solid transparent;
   padding: .5rem 1rem;
   color: var(--color-keys);
+  font-family: "Harry p", cursive;
+  font-weight: normal;
+  font-style: normal;
   font-size: var(--font-size-medium);
   background-color: var(--color-keys-light);
   border-radius: 5px;
+  box-shadow: inset -1px 0 3px rgb(1, 12, 78);
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
@@ -62,6 +116,10 @@ button {
   height: 100%;
   max-height: 900px;
   text-align: center;
+  background:linear-gradient(rgb(0,0,0, 0.2), rgba(0,0,0, 0)),
+  url(../images/harry-war.jpg) no-repeat center top;
+  background-size: 100% 75%;
+
 }
 
 .section {
@@ -69,32 +127,89 @@ button {
   padding: 10px;
 }
 
+
+#pharse {
+margin-top: 100px;
+
+}
+
+
+#scoreboard {
+  margin-bottom: 10px;
+}
 /* Title */
 
 .header {
   color: var(--color-start);
+  text-shadow: 2px 2px 3px #fff;
+  letter-spacing: 0.158em;
+  padding-top: 0.158em;
+ 
 }
 
 /* Phrase */
 
-.letter {
-  font-size: var(--font-size-medium);
-  height: 65px;
-  width: 65px;
-  padding: 20px 1px 0 1px;
-  margin-right: 2px;
-  color: transparent;
-  background: var(--color-neutral-light);
-  border-radius: 5px;
+span {
+  height: 60px;
+  width: 60px;
+  padding: 1px 0 0 1px;
+
 }
+
+span.box {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-out;
+  height: 60px;
+  width: 60px;
+  margin-right: 2px;
+  border-radius: 5px;
+  z-index: 100;
+  box-shadow: 1px 1px 1px 2px #000;
+}
+
+
+
+
+span.front,
+span.letter {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  font-size: 4em;
+  height: 60px;
+  width: 60px;
+  color: pink;
+  border: solid 1px rgb(250, 225, 2);
+  background: rgba(225, 225,225, .7);
+  border-radius: 5px;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  box-shadow: 1px 1px 1px 2px #000;
+}
+
+span.letter {
+  transform: rotateX(-180deg);
+  color: rgb(250, 225, 2);
+  padding-bottom: 1px;
+  font-family: 'Harry P', cursive;
+  font-weight: normal;
+  font-style: normal;
+  background: rgba(18, 15, 59, .7);
+}
+
+/* span.box:hover {
+  transform: rotate3d(1, 0, 0, 180deg);
+} */
+
+
 
 .space {
   width: 15px;
 }
 
 .show {
-  color: #000;
-  background-color: #76CE82;
+  transform: rotate3d(1, 0, 0, 180deg);
 }
 
 /* Keyboard */
@@ -108,16 +223,31 @@ button {
   background: var(--color-neutral);
   border-radius: 5px;
   font-size: var(--font-size-medium);
+  box-shadow: inset -1px 0 4px #000;
   color: #FFFFFF;
 }
 
-.btn__reset {
-  padding: 8px;
-  margin: 50px auto;
-  background: #FFFFFF;
-  border-radius: 5px;
+
+.btn__reset,
+.btn__resetRound {
+  padding: 23px 31px;
+  margin: 5px auto;
+  background: #002528;
+  box-shadow:inset 0 0 7px 3px #e1eef4;
+  border-radius: 41px;
+  border: solid#010806 4px;
   font-size: var(--font-size-medium);
+  font-family: 'Harry P', cursive;
 }
+
+
+.btn__resetRound {
+margin: 314px auto 0;
+cursor: pointer;
+
+}
+
+
 
 /* Overlay */
 
@@ -132,32 +262,88 @@ button {
   left: 0;
   right: 0;
   border-radius: 5px;
+ 
+  
 }
 
-.title {
-  color: #FFF;
+
+
+.title,
+.winLose,
+.loseWin {
+  /* color: #fff; */
+  margin-top:300px;
+  color:#fff;
+  text-shadow: 0 1px #060135,
+               0 2px #0d0b40,
+               0 3px #171457,
+               0 4px #18154e,
+               0 5px #365678,
+               0 6px #abf0f8,
+               0 6px 1px rgba(235, 252,252, .1),
+               0 0 5px rgba(235, 252,252, .1),
+               0 1px 3px rgba(235, 252,252, .3),
+               0 3px 5px rgba(235, 252,252, .2),
+               0 5px 10px rgba(235, 252,252, .25),
+               0 20px 20px rgba(255, 255,255, .2),
+               0 30px 30px rgba(255, 255,255, .9);
+  font-family: 'Harry P', cursive;
+  letter-spacing: 4px;
 }
+
+.winLose,
+.loseWin {
+  margin-top: 10px;
+}
+
+
 
 .start {
-  background-color: var(--color-start);
+  background: var(--color-start); 
+  background-image:  url("../images/harry-potter-start.jpg"); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
 }
 
 .start a {
-  color: var(--color-win);
+   cursor: pointer;
 }
 
+
+
+
 .win {
-  background-color: var(--color-win);
+  background-color: var(--color-keys);
+  background: url(../images/team.jpg) no-repeat;
+  background-size: cover;
+ 
+  
+  
 }
+
+.win .btn__resetRound {
+  background: #03121f;
+  box-shadow:inset 0 0 7px 3px #e1eef4;
+}
+
+
 
 .win a {
   color: var(--color-win);
+  text-shadow: 0 1px 1px #fff;
 }
 
 .lose {
   background-color: var(--color-lose);
+  background: url(../images/voldermort-team.jpg) no-repeat;
+  background-size: cover;
+ 
 }
+
 
 .lose a {
   color: var(--color-lose);
+  text-shadow: 0 1px 1px #fff;
 }
