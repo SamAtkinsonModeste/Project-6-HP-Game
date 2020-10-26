@@ -45,7 +45,7 @@ body {
   background: linear-gradient( #000, #203A43,#000, #000),
   url(../images/harry-war.jpg) no-repeat center top;
   background-size: 90%, 100%;
-  /* background: */
+ 
 }
 
 li, ol, ul {
@@ -137,8 +137,9 @@ margin-top: 100px;
 #scoreboard {
   margin-bottom: 10px;
 }
-/* Title */
 
+
+/* Title */
 .header {
   color: var(--color-start);
   text-shadow: 2px 2px 3px #fff;
@@ -198,7 +199,8 @@ span.letter {
   background: rgba(18, 15, 59, .7);
 }
 
-/* span.box:hover {
+/* USED TO TEST MY TRANFORM WITHOUT JS
+span.box:hover {
   transform: rotate3d(1, 0, 0, 180deg);
 } */
 
@@ -271,7 +273,6 @@ cursor: pointer;
 .title,
 .winLose,
 .loseWin {
-  /* color: #fff; */
   margin-top:300px;
   color:#fff;
   text-shadow: 0 1px #060135,
