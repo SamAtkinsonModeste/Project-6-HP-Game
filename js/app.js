@@ -26,7 +26,7 @@ const phrases = [
     phrase: 'The Order of the Phoenix'
   },
   {
-    hint: "Which Professor is this?",
+    safe: "Which Professor is this?",
     phrase: 'Severus Snape'
   },
   {
@@ -62,6 +62,10 @@ const phrases = [
     phrase: 'Lord Voldemolt'
   },
 ];
+
+
+
+
 
 
 //2. List of Functions to create
@@ -178,7 +182,7 @@ let randomPhraseObject = getRandomPhraseArray(phrases);
           const btn = evt.target;
           btn.className = "chosen";
           btn.disabled = true;
-          const check = checkLetter(evt.target.textContent.toLowerCase());
+          const check = checkLetter(btn.textContent.toLowerCase());
           
       
 
@@ -191,7 +195,7 @@ let randomPhraseObject = getRandomPhraseArray(phrases);
             console.log(missed);
             missed++;
             oopsWand[missed - 1].src = "images/broken-wand.png";
-            // console.log(oopsWand[missed - 1].src.indexOf('img'));
+            console.log(oopsWand[missed - 1].src.indexOf('img'));
 
           
 

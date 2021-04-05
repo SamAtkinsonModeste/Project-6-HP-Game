@@ -1,4 +1,5 @@
 /* Main styles */
+
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
 
 @font-face {
@@ -13,6 +14,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 
 
 /* Variables */
@@ -38,7 +40,7 @@
 }
 
 body {
-  justify-content: space-evenly;
+  justify-content: space-evenly; /*NOTE:*/
   flex-direction: column;
   display: flex;
   height: 100vh;
@@ -191,7 +193,7 @@ span.letter {
 
 span.letter {
   transform: rotateX(-180deg);
-  color: rgb(250, 225, 2);
+  color: transparent;
   padding-bottom: 1px;
   font-family: 'Harry P', cursive;
   font-weight: normal;
@@ -212,6 +214,10 @@ span.box:hover {
 
 .show {
   transform: rotate3d(1, 0, 0, 180deg);
+}
+
+.show span.letter {
+  color: rgb(250,255,2);
 }
 
 /* Keyboard */
