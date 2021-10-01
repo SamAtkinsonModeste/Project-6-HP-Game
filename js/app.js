@@ -26,8 +26,8 @@ const phrases = [
     phrase: 'The Order of the Phoenix'
   },
   {
-    safe: "Which Professor is this?",
-    phrase: 'Severus Snape'
+    hint: "Which Professor is this?",
+    phrase: 'Severus Snape',
   },
   {
     hint: "Which book is this? Harry Potter and.....?",
