@@ -1,3 +1,5 @@
-# Project-6-HP-Game
-Working with JavaScript DOM Scripting for the first time in a project.
+#  Treehouse FEWD TechDegree - Game Show App
+
+
+This is my sixth project for the [Front End Web Development Techdegree at Treehouse](https://teamtreehouse.com/techdegree/front-end-web-development).
 
